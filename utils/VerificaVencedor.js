@@ -1,31 +1,31 @@
-export default function verificaVencedor(quadrados, jogador) {
+export default function verificaVencedor(quadros, jogador) {
 
     for (let i = 0; i < 3; i++) {
-        if (quadrados[i * 3] === jogador
-            && quadrados[i * 3 + 1] === jogador
-            && quadrados[i * 3 + 2] === jogador)
+        if (quadros[i * 3] === jogador
+            && quadros[i * 3 + 1] === jogador
+            && quadros[i * 3 + 2] === jogador)
             return jogador;
     }
 
     for (let i = 0; i < 3; i++) {
-        if (quadrados[i] === jogador
-            && quadrados[i * 3] === jogador
-            && quadrados[i * 6] === jogador)
+        if (quadros[i] === jogador
+            && quadros[i * 3] === jogador
+            && quadros[i * 6] === jogador)
             return jogador;
     }
 
-    if (quadrados[0] === jogador
-        && quadrados[4] === jogador
-        && quadrados[8] === jogador)
+    if (quadros[0] === jogador
+        && quadros[4] === jogador
+        && quadros[8] === jogador)
         return jogador;
 
-    if (quadrados[2] === jogador
-        && quadrados[4] === jogador
-        && quadrados[6] === jogador)
+    if (quadros[2] === jogador
+        && quadros[4] === jogador
+        && quadros[6] === jogador)
         return jogador;
 
     for (let i = 0; i < 9; i++) {
-        if(!quadrados[i])
+        if(!quadros[i])
             return "";
     }
     return "E";

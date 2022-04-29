@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     },
     touchable: {
         borderWidth: 1,
-        background: 'white',
+        backgroundColor: 'white',
     },
     text: {
         minWidth: 100,

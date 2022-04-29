@@ -9,7 +9,7 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      quadrados: Array(9).fill(""),
+      quadros: Array(9).fill(""),
       xProximo: true,
       mensagem: "",
       tabuleiroDesabilitado: false,
@@ -17,14 +17,14 @@ export default class App extends React.Component {
   }
 
   handleOnClick = i => {
-    const { quadrados, xProximo } = this.state;
+    const { quadros, xProximo } = this.state;
 
-    if (quadrados[i]) return;
+    if (quadros[i]) return;
     const jogador = xProximo ? "X" : "O";
 
-    quadrados[i] = jogador;
+    quadros[i] = jogador;
 
-    let msg = verificaVencedor(quadrados, jogador);
+    let msg = verificaVencedor(quadros, jogador);
 
     switch (msg) {
       case "X":
@@ -39,15 +39,15 @@ export default class App extends React.Component {
 
     const desabilitado = !msg ? false : true;
     this.setState({
-      quadrados,
+      quadros,
       xProximo: !xProximo,
       mensagem: msg,
       tabuleiroDesabilitado: desabilitado
     });
 
-    novoJogo = () => {
+    const novoJogo = () => {
       this.setState({
-        quadrados: Array(9).fill(""),
+        quadros: Array(9).fill(""),
         xProximo: true,
         mensagem: "",
         tabuleiroDesabilitado: false,
@@ -56,7 +56,7 @@ export default class App extends React.Component {
 
   }
     render(){
-      const{quadrados, xProximo, mensagem, tabuleiroDesabilitado}=this.state;
+      const{quadros, xProximo, mensagem, tabuleiroDesabilitado}=this.state;
       return(
         <View style={styles.container}>
           <View style={styles.titleContainer}>
@@ -64,7 +64,7 @@ export default class App extends React.Component {
           </View>
           <View style={styles.boardContainer}>
             <Tabuleiro
-              quadrados={quadrados}
+              quadros={quadros}
               desabilitado={tabuleiroDesabilitado}
               onClick={this.handleOnClick}
             />

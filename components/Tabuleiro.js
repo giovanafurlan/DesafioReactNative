@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import Quadro from './Quadro';
 
@@ -7,7 +7,7 @@ export default class Tabuleiro extends React.Component {
     renderQuadro(i) {
         return (
             <Quadro
-                value={this.props.quadro[i]}
+                value={this.props.quadros[i]}
                 desabilitado={this.props.desabilitado}
                 onClick={() => this.props.onClick(i)}
             />
